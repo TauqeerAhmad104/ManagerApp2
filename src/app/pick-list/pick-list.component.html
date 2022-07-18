@@ -1,0 +1,11 @@
+<p-pickList [source]="sourceProjects" [target]="targetProjects" sourceHeader="Employees" targetHeader="Project" dragdrop="true"
+    [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="name"
+    sourceFilterPlaceholder="Search by name" targetFilterPlaceholder="Search by name">
+    <ng-template let-project pTemplate="item">
+        <div class="project-item">
+            <div class="project-list-detail">
+                <h5 class="p-mb-2">{{project.name}}</h5>
+            </div>
+        </div>
+    </ng-template>
+</p-pickList>

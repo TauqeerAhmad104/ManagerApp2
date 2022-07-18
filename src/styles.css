@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+div.container{
+    margin: 20px 40px;
+    text-align: center;
+}
+
+.fill-remaining-space{
+    flex: 10 10 auto;
+}
+
+.fill.normal-form{
+    flex: 10 10 auto;
+}
+
+.container {
+    display: flex; /* or inline-flex */
+  }
+  .p-float-label{
+    margin: 20px 40px;
+  }
+
+  .p-inputgroup-addon{
+margin: 10px 40px;
+  }
+  .button-row{
+    margin: 10px 120px;
+    
+  }
+  .pButton{
+    margin-right: 5px;
+  }
+  .menubar{
+    margin: 10px 120px;
+  }

@@ -1,0 +1,55 @@
+<!-- <form  class="form-froup row">
+  <label class="col-sm-2 col-form-label">Project Name</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="projectName" name="projectName" placeholder="Enter Project">
+  </div>
+  <label class="col-sm-2 col-form-label">Clint Name</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="clintName" name="clintName" placeholder="Enter Clint Name">
+  </div>
+  <label class="col-sm-2 col-form-label">Initiation Date</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="initiationDate" name="initiationDate" placeholder="Initiation Date">
+  </div>
+  <label class="col-sm-2 col-form-label">Duration</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="duration"name="duration" placeholder="Initiation Date">
+  </div>
+
+
+  <button (click)="addProject()" *ngIf="proj.id==0" class="btn btn-primary">
+    Add
+  </button>
+  <button (click)="updateProject()" *ngIf="proj.id!=0" class="btn btn-primary">
+   Update
+  </button>
+
+ </form> -->
+
+<!-- <p-toast [style]="{marginTop: '80px'}"></p-toast> -->
+
+    <p-panel header="Validate">
+<div class="card">
+    <h5>Add Project</h5>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="projectName">Project Name</label>
+        <input id="projectName" type="text" [(ngModel)]="projectName" pInputText />
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="clintName">Clint Name</label>
+        <input id="clintName" type="text" [(ngModel)]="clintName" pInputText />
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label for="icon">InitiationDate</label>
+        <p-calendar [(ngModel)]="initiationDate" [showIcon]="true" inputId="icon"></p-calendar>
+    </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="duration">Duration</label>
+        <input id="duration" type="text" [(ngModel)]="duration" pInputText />
+      </div>
+    </div>
+  </div>
+</p-panel>
+
+

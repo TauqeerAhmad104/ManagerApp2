@@ -1,0 +1,78 @@
+ <p-toast [style]="{marginTop: '80px'}"></p-toast>
+<!-- Button trigger with bootstrp -->
+<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)= "addProject()"
+data-backdrop="static" data-keyboard="false">
+    Add Project
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{projectTitle}}</h5>
+          <button type="button" (click)="closeProject()" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit-project [proj]="proj" *ngIf="activateAddEditComp"></app-add-edit-project>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- USING PRIMENG FUNCTIONS WORK BUT DeSIGN NOT-->
+ <!-- <p-button label="Click" styleClass="ui-button-info"></p-button>      
+ <p-button 
+ type="button" 
+ class="btn btn-light btn-outline-primary float-right m-2" 
+ data-toggle="modal" 
+ data-target="#exampleModal" 
+ (click)= "addProject()"
+ data-backdrop="static" data-keyboard="false"
+ >Add Project</p-button>
+
+
+ <p-dialog>
+    <ng-template pTemplate="header">
+        {{projectTitle}}
+    </ng-template>
+    <app-add-edit-project [proj]="proj" *ngIf="activateAddEditComp"></app-add-edit-project>
+    <ng-template pTemplate="footer">
+        <p-button label="Click" styleClass="ui-button-close" (click)="closeProject()"></p-button>
+    </ng-template>
+</p-dialog> -->
+
+
+
+<p-table  [columns]="projectList" [value]="project">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+            <th> Opetions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+            <td>
+                <button pButton type="button" label="Click" class="btn btn-light mr-1"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)= "editProject(rowData)"
+                data-backdrop="static" data-keyboard="false">
+                <i class="pi pi-user-edit"></i>
+                </button>
+                <button pButton type="button" label="Click"class="btn btn-light mr-1"
+                (click)="deleteProject(rowData)">
+                <i class="pi pi-trash"></i>
+                </button>
+            </td>
+        </tr>    
+    </ng-template>
+</p-table>
