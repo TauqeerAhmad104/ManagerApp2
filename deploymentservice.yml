@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: managerapp
   labels:
-    app: nodeapp
+    app: managerapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: managerap
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: managerapp 
     spec:
       containers:
-      - name: nodeserver
-        image: thetips4you/nodeapp:latest
+      - name: managerappserver
+        image: tauqeerdocker/managerapp:latest
         ports:
         - containerPort: 3000
         
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp-service
+  name: managerapp-service
 spec:
   selector:
-    app: nodeapp 
+    app: managerapp 
   type: LoadBalancer
   ports:
   - protocol: TCP
