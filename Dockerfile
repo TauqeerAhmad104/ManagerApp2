@@ -1,5 +1,5 @@
 # Stage 1: Use Node.js 14 as base image for building
-FROM node:14 AS build-stage
+FROM node:16.20.2 AS build-stage
 
 # Set working directory
 WORKDIR /app
