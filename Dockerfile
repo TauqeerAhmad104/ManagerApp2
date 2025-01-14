@@ -4,8 +4,10 @@ FROM node:14 AS build-stage
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package.json and package-lock.json first to install dependencies
 COPY package.json package-lock.json ./
+
+# Install dependencies
 RUN npm install
 
 # Copy the rest of the application
